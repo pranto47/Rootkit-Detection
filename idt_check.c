@@ -43,7 +43,6 @@ unsigned long	get_idt_addr(void)
 {
   unsigned char	idtr[6];
   unsigned long	idt;
-
   __asm__ volatile ("sidt %0" :  "=m" (idtr));
   idt = *((unsigned long *)&idtr[2]);
   return (idt);
